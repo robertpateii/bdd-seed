@@ -1,0 +1,25 @@
+{
+  "name": "bdd-seed",
+  "version": "1.0.0",
+  "description": "Documentation, testability, style, functionality",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robertpateii/bdd-seed.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/robertpateii/bdd-seed/issues"
+  },
+  "homepage": "https://github.com/robertpateii/bdd-seed#readme",
+  "devDependencies": {
+    "@cucumber/cucumber": "^7.0.0",
+    "hamjest": "^3.7.1",
+    "selenium-webdriver": "^4.0.0-beta.1"
+  }
+}

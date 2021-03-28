@@ -15,8 +15,11 @@ Then('the page loads with the title {string}', async function (title) {
 });
 
 Then('open the link to {string} within {string}', async function (path, cssClass) {
-    // Write code here that turns the phrase above into concrete actions
-    return 'pending';
+    let parent = await this.driver.findElement(By.className(cssClass));
+    let ele = await parent.findElement(By.css('[href="' + path + '"]'));
+    let elePath = await ele.getAttribute("href");
+    console.log(elePath);
+    j.assertThat(this.domain + path, j.equalTo(elePath));
 });
 
   

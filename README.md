@@ -3,4 +3,4 @@ Setup
 2. npm-install
 
 Testing
-1. $ ./node_modules/.bin/cucumber-js
+./node_modules/.bin/cucumber-js

@@ -3,10 +3,10 @@ const {Builder, By, Until} = require('selenium-webdriver');
 
 
 class CustomWorld extends World {
-    driver = new Builder()
-        .forBrowser('chrome')
-        .build()
+    driver = new Builder().forBrowser('chrome').build();
     
+    domain = "https://www.w3.org"
+
     constructor(options) {
         super(options)
     }

@@ -14,7 +14,7 @@ Then('the page loads with the title {string}', async function (title) {
     j.assertThat(text.toString(), j.equalTo(title));
 });
 
-Then('open the link to {string} within {string}', async function (path, cssClass) {
+Then('the link to {string} is within {string}', async function (path, cssClass) {
     let parent = await this.driver.findElement(By.className(cssClass));
     let ele = await parent.findElement(By.css('[href="' + path + '"]'));
     let elePath = await ele.getAttribute("href");

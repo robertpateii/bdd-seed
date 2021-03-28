@@ -5,4 +5,4 @@ Feature: Smoke Test
 
     Scenario: Main menu works
         When the user visits "/"
-        Then open the link to "/standards/" within "main_nav"
+        Then the link to "/standards/" is within "main_nav"

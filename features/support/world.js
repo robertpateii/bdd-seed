@@ -1,11 +1,11 @@
-const { setWorldConstructor, World } = require('@cucumber/cucumber');
-const {Builder, By, Until} = require('selenium-webdriver');
+const {setWorldConstructor, World } = require('@cucumber/cucumber');
+const {Builder, By, Until, Browser} = require('selenium-webdriver');
 
 
 class CustomWorld extends World {
-    driver = new Builder().forBrowser('chrome').build();
+    driver = new Builder().forBrowser(Browser.CHROME).build();
     
-    domain = "https://www.w3.org"
+    domain = "https://www.selenium.dev"
 
     constructor(options) {
         super(options)

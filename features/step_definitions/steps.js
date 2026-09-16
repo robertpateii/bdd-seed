@@ -19,9 +19,9 @@ Then('the link to {string} is within {string}', async function (path, cssClass) 
         let ele = await parent.findElement(By.css('[href="' + path + '"]'));
     } catch (e) {
         if (e instanceof error.NoSuchElementError) {
+            throw new Error("No element was found with " + path + " as the path.");
         } else {
-            console.log(e);
-            j.assertThat(false);
+            throw e;
         }
     }
 

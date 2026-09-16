@@ -1,9 +1,14 @@
 const {setWorldConstructor, World } = require('@cucumber/cucumber');
 const {Builder, By, Until, Browser} = require('selenium-webdriver');
-
+const Chrome = require('selenium-webdriver/chrome');
+const coptions = new Chrome.Options();
 
 class CustomWorld extends World {
-    driver = new Builder().forBrowser(Browser.CHROME).build();
+    // exclude enable-logging (turns off logging) to avoid non-test-related output from Chrome
+    driver = new Builder()
+        .forBrowser(Browser.CHROME)
+        .setChromeOptions(coptions.excludeSwitches('enable-logging'))
+        .build();
     
     domain = "https://www.selenium.dev"
 

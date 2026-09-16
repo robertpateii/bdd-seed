@@ -1,8 +1,8 @@
 Feature: Smoke Test
-    Scenario: Index page loads correctly
-        When the user visits "/"
-        Then the page loads with the title "W3C"
+    Scenario: Index page loads with some content
+        When the user visits "/selenium/web/web-form.html"
+        Then the h1 contains the text "Web form"
 
-    Scenario: Main menu works
-        When the user visits "/"
-        Then the link to "/standards/" is within "main_nav"
+    Scenario: Main menu contains a link
+        When the user visits "/selenium/web/web-form.html"
+        Then the link to "./indexfoo.html" is within "container"

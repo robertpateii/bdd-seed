@@ -1,6 +1,6 @@
 const { Given, When, Then } = require('@cucumber/cucumber');
-const j = require('hamjest');
 const {Builder, By, Until, error} = require('selenium-webdriver');
+const assert = require('assert');
 
 When('the user visits {string}', async function (path) {
     this.getPage(this.domain + path);
@@ -8,7 +8,7 @@ When('the user visits {string}', async function (path) {
 
 Then('the {string} contains the text {string}', async function (inputElement, inputText) {
     let text = await this.driver.findElement(By.css(inputElement)).getText();
-    j.assertThat(text.toString(), j.equalTo(inputText));
+    assert(text.toString() === inputText);
 });
 
 Then('the link to {string} is within {string}', async function (path, cssClass) {
@@ -24,12 +24,4 @@ Then('the link to {string} is within {string}', async function (path, cssClass) 
             throw e;
         }
     }
-
-    /* This doesn't test the feature, it tests if domain+path
-     * is the same as the path derived from getAttribute, which
-     * won't even match relative links.
-     * TODO: remove this next time I see this if I still agree.
-    let elePath = await ele.getAttribute("href");
-    j.assertThat(this.domain + path, j.equalTo(elePath));
-     */
 });

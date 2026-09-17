@@ -14,7 +14,7 @@ Run the example:
 Add to your project:
 1. git clone or download the repository
 2. copy the features folder from the repo to your project
-3. run `npm install --save-dev @cucumber/cucumber selenium-webdriver hamjest` to install the test framework (cucumber) and the browser driver (selenium)
+3. run `npm install --save-dev @cucumber/cucumber selenium-webdriver` to install the test framework (cucumber) and the browser driver (selenium)
 4. Add/edit the package.json so that the test script calls cucumber-js:
 ```
   "scripts": {
